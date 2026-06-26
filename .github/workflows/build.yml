@@ -1,0 +1,37 @@
+name: Build and Export Dist
+
+on:
+  push:
+    branches: [ "main" ] # Runs automatically when you push to the main branch
+  workflow_dispatch: # Allows you to trigger the build manually
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Get the code from your repository
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step 2: Set up the correct Node.js environment
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      # Step 3: Install all dependencies (react, vite, tailwind, etc.)
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Run the build command to generate the dist folder
+      - name: Build the project
+        run: npm run build
+
+      # Step 5: Upload the dist folder so you can download it
+      - name: Upload dist artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: my-app-dist
+          path: dist/

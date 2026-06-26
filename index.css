@@ -1,0 +1,39 @@
+@import "@fontsource/hind-siliguri/400.css";
+@import "@fontsource/hind-siliguri/500.css";
+@import "@fontsource/hind-siliguri/600.css";
+@import "@fontsource/hind-siliguri/700.css";
+@import "katex/dist/katex.min.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Hind Siliguri', 'Segoe UI', Tahoma, sans-serif;
+  background-color: #f0f2f5;
+  color-scheme: light;
+}
+
+/* Dark mode override via class */
+html.dark body {
+  background-color: #000000; /* Force pure black */
+  color-scheme: dark;
+}
+
+/* Prevent text selection colors flipping in some dark modes */
+::selection {
+  background: #3b82f6;
+  color: white;
+}
+
+/* Fix for KaTeX fonts potentially being blocked or slow */
+.katex { font-size: 1.1em; }
+
+/* Responsive layout scaling wrapper */
+html {
+/* Starts scaling down below 420px, reducing by proportion, keeping a minimum of 15.2px (increased by 105% of now) */
+font-size: clamp(15.2px, 4.297vw, 18.09px);
+}
+body {
+font-family: 'Hind Siliguri', 'Segoe UI', Tahoma, sans-serif;
+}

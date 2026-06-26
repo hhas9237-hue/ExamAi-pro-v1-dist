@@ -1,0 +1,30 @@
+{
+  "name": "examai-pro2",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@fontsource/hind-siliguri": "^5.2.7",
+    "@google/genai": "latest",
+    "katex": "^0.16.11",
+    "lucide-react": "latest",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.0",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.5.0",
+    "postcss": "^8.5.15",
+    "tailwindcss": "^3.4.19",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.11"
+  }
+}
